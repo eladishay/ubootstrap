@@ -28,6 +28,10 @@ curl -L http://install.ohmyz.sh > install.sh
 sh install.sh
 rm -f install.sh
 
+### Install terminator - A better terminal
+echo -e "${LIGHT_GREEN}### Install terminator - A better terminal${NC}"
+sudo apt-get install -y terminator
+
 ### Compile vim with lua support ###
 echo -e "${LIGHT_GREEN}### Compile vim with lua support${NC}"
 sudo apt-get remove -y --purge vim vim-runtime vim-gnome vim-tiny vim-common vim-gui-common
