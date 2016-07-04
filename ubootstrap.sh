@@ -20,6 +20,7 @@ sudo apt-get install -y git-core
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
+git config --global core.editor "vim"
 
 ### Install oh my zsh ###
 echo -e "${LIGHT_GREEN}### Installing oh my zsh${NC}"
