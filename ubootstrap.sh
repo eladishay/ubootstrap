@@ -22,13 +22,6 @@ git config --global color.status auto
 git config --global color.branch auto
 git config --global core.editor "vim"
 
-### Install oh my zsh ###
-echo -e "${LIGHT_GREEN}### Installing oh my zsh${NC}"
-sudo apt-get install -y zsh
-curl -L http://install.ohmyz.sh > install.sh
-sh install.sh
-rm -f install.sh
-
 ### Install terminator - A better terminal
 echo -e "${LIGHT_GREEN}### Install terminator - A better terminal${NC}"
 sudo apt-get install -y terminator
@@ -88,4 +81,14 @@ git clone https://github.com/eladishay/vimrc.git
 echo -e "${LIGHT_GREEN}### Move vimrc file to $HOME ${NC}"
 mv vimrc/vimrc ~/.vimrc
 rm -rf vimrc
+
+### Install oh my zsh ###
+echo -e "${LIGHT_GREEN}### Installing oh my zsh${NC}"
+sudo apt-get install -y zsh
+curl -L http://install.ohmyz.sh > install.sh
+sh install.sh
+rm -f install.sh
+echo -e "${LIGHT_GREEN}### In order to install all VIM plugins enter command mode and type PlugInstall - That's it (:${NC}"
+
+
 
