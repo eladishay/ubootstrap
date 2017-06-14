@@ -61,10 +61,6 @@ pip install pudb
 pip install ipython
 sudo pip install django
 
-### GUI stuff ###
-echo -e "${LIGHT_GREEN}### Setting some GUI stuff${NC}"
-gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 
 ### Install vim plugin manager ###
 echo -e "${LIGHT_GREEN}### Installing VIM plugin manager (vim-plug)${NC}"
