@@ -72,8 +72,8 @@ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 
 ### Install vim plugin manager ###
 echo -e "${LIGHT_GREEN}### Installing VIM plugin manager (vim-plug)${NC}"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ### Clone vimrc file ###
 echo -e "${LIGHT_GREEN}### Clone vimrc file${NC}"
 cd $CURRENT_DIR
@@ -82,12 +82,27 @@ echo -e "${LIGHT_GREEN}### Move vimrc file to $HOME ${NC}"
 mv vimrc/vimrc ~/.vimrc
 rm -rf vimrc
 
+### Install chrome ###
+echo -e "${LIGHT_GREEN}### Installing Chrome${NC}"
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
+### Install virtualbox ###
+echo -e "${LIGHT_GREEN}### Installing Virtualbox${NC}"
+echo 'echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list' | sudo tee /etc/apt/sources.list
+
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install virtualbox-5.2
+
 ### Install oh my zsh ###
+sudo apt-get install curl -y
 echo -e "${LIGHT_GREEN}### Installing oh my zsh${NC}"
-sudo apt-get install -y zsh
-curl -L http://install.ohmyz.sh > install.sh
-sh install.sh
-rm -f install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 echo -e "${LIGHT_GREEN}### In order to install all VIM plugins enter command mode and type PlugInstall - That's it (:${NC}"
 
 
